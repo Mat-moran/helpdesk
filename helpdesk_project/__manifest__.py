@@ -7,7 +7,8 @@
     "version": "13.0.1.0.0",
     "license": "AGPL-3",
     "category": "After-Sales",
-    "author": "AdaptiveCity, "
+    "author": "Amadeo Morán Guerrero, "
+    "AdaptiveCity, "
     "C2i Change 2 Improve, "
     "Domatix, "
     "Factor Libre, "
@@ -15,7 +16,7 @@
     "PESOL ,"
     "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/helpdesk",
-    "depends": ["helpdesk_mgmt"],
+    "depends": ["helpdesk_mgmt", "project"],
     "data": [],
     "demo": [],
     "development_status": "Alpha",
