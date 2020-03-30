@@ -9,30 +9,38 @@ TODO:
 ----[Heredando la vista formulario del helpdesk_mgmt --> helpdesk_ticket_view id="ticket_view_form" --> sheet:group2:notebook:+page]
 
 --- Poder seleccionar un proyecto o una tarea.
-----[(tiene que añadir 2 campos m2o a project y task) ampliando la función de HelpdeskTicket por herencia con el campo project:m2o y el campo task:m2]
-----[dentro de la página de project poniendo los dos campos seleccionables: project y task --> sin posibilidad de crear (revisar campo de seleccion de compañia)]
+----[\/(tiene que añadir 2 campos m2o a project y task) ampliando la función de HelpdeskTicket por herencia con el campo project:m2o y el campo task:m2]
+----[\/dentro de la página de project poniendo los dos campos seleccionables: project y task --> sin posibilidad de crear (revisar campo de seleccion de compañia)]
 
 --- Si busco la tarea sin indicar el proyecto completar el proyecto de esa tarea
-----[(onchange en tarea que complete el projecto)]
+----[\/(onchange en tarea que complete el projecto)]
 
 --- si busco primero el proyecto solo permitir seleccionar tareas de ese proyecto
-----[(onchange a project que devuelva un domain)]
+----[\/(onchange a project que devuelva un domain)]
 
 -- poder agrupar, filtrar por proyecto o tarea
 ----[(modificar vista search)????]
 
+-- que aparezca en la vista kanban de los tikets, información sobre el proyechto al que pertenecen
+----[Revisar vista kanban]
+
 - En la VISTA FORMULARIO DE TAREAS[project.task]:
 
 -- añadir una solapa para Tickets, en esa solapa:
-----[Heredando la vista formulario del project --> terminar]
+----[\/Heredando la vista formulario del project --> notebook inside con el campo ticket_ids]
 --- añadir un listado de tickets asociados a esa tarea
-----[(o2m asociado al m2o definido en ticket)]
+----[\/(o2m asociado al m2o definido en ticket)]
 
 - MEJORAR GUI, para que:
--- las incidencias se registren en las tareas con un botón (con que datos se va a crear, pasar la tarea y proyecto por contexto)
--- se muestre un smart button con el número de incidencias y si se clicka se redirija.
+-- [\/] las incidencias se registren en las tareas con un botón (con que datos se va a crear, pasar la tarea y proyecto por contexto)
+-- [\/] se muestre un smart button con el número de incidencias y si se clicka se redirija.
 -- Ver como está hecho en el módulo CRM para crear presupuestos desde leads.
 
+
+DUDAS:
+- Estando en helpdesk_ticket --> hay un self.project_id y un self.task_id.project_id???
+- En la vista del helpdesk_mgmt la vista no esta dentro de un <data> toda la vista </data> como en el video
+- Que es el domain??? para que se suele utilizar?
 
 Proceso PR:
 

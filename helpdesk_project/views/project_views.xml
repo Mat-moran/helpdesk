@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Inherit Form view -->
+  <record id="views_ticket_in_projectTask_form" model="ir.ui.view">
+    <field name="name">views.ticket.in.projectTask.form</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="project.view_task_form2"/>
+    <field name="arch" type="xml">
+
+      <xpath expr="//button[@name='action_assign_to_me']" position="after">
+        <button name="action_new_ticket" string="New Ticket" type="object"/>
+      </xpath>
+
+      <xpath expr="//button[@name='action_subtask']" position="before">
+        <button class="oe_stat_button" type="object"
+            name="action_view_tickets" icon="fa-pencil-square-o">
+            <field name="ticket_count" widget="statinfo" string="Tickets"/>
+        </button>
+      </xpath>
+
+      <notebook position="inside">
+        <page name="tickets" string="Tickets">
+            <field name="ticket_ids"/>
+        </page>
+      </notebook>
+
+    </field>
+  </record>
+
+  <!-- Actions -->
+  <record id="task_action_ticket_new" model="ir.actions.act_window">
+    <field name="type">ir.actions.act_window</field>
+    <field name="name">Ticket</field>
+    <field name="res_model">helpdesk.ticket</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <record id="action_view_tickets" model="ir.actions.act_window">
+    <field name="type">ir.actions.act_window</field>
+    <field name="name">Ticket</field>
+    <field name="res_model">helpdesk.ticket</field>
+    <field name="view_mode">form,tree</field>
+  </record>
+
+
+</odoo>

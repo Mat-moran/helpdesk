@@ -24,8 +24,8 @@ class HelpdeskTicket(models.Model):
     @api.onchange("project_id")
     def _onchange_project_id(self):
         if self.project_id:
-            domain = {'task_id':[('project_id', '=', self.project_id)]}
+            domain = {'task_id':[('project_id', '=', self.project_id.id)]}
         else:
             domain = {}
 
-        return vals
+        return {"domain":domain}

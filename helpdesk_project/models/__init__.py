@@ -1,2 +1,2 @@
 from . import project
-from . import tickets
+from . import helpdesk_ticket

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Inherit Form view -->
+  <record id="view_project_in_ticket_form" model="ir.ui.view">
+    <field name="name">view.project.in.ticket.form</field>
+    <field name="model">helpdesk.ticket</field>
+    <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form"/>
+    <field name="arch" type="xml">
+      <notebook position="inside">
+        <page name="project" string="Project">
+          <group>
+            <field name="project_id"/>
+            <field name="task_id"/>
+          </group>
+        </page>
+      </notebook>
+    </field>
+  </record>
+</odoo>
